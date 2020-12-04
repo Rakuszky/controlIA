@@ -19,6 +19,7 @@ import javax.swing.SwingConstants;
  * @author Rakuszky
  */
 public class ventanaLogin extends JFrame {
+    public JPanel panelLogin;
     public ventanaLogin(){
         this.setSize(300,400); //Se define el largo y ancho de la ventana de LOGIN
         setTitle("Ingreso de Operador"); //Corresponde al título de la ventana
@@ -26,17 +27,23 @@ public class ventanaLogin extends JFrame {
         setLocationRelativeTo(null); //Se establece que la ventana aparecerá en el centro de la pantalla
         setResizable(false); //Se impide que el operador pueda modificar las dimensiones de la pantalla
         
-        iniciarPanel_1();
+        iniciarComponentes();
         
         setDefaultCloseOperation(EXIT_ON_CLOSE); //Se cierra el proceso al presionar X
     }
     
+    private void iniciarComponentes(){
+        iniciarPanel_1();
+        iniciarEtiquetas1();
+    }
+    
     private void iniciarPanel_1(){
-        JPanel panelLogin= new JPanel(); //Creación del panel
-        
+        panelLogin= new JPanel(); //Creación del panel       
         panelLogin.setLayout(null); // Se desactiva el diseño predeterminad del panel
-        this.getContentPane().add(panelLogin); //Se agrega el panel a la ventana
-        
+        this.getContentPane().add(panelLogin); //Se agrega el panel a la ventana                
+    }
+    
+    private void iniciarEtiquetas1(){
         //Agregando icono de usuario
         ImageIcon imgUsuarios = new ImageIcon("usuario_icono.png"); //Se crea el imgIcon asociado a la imagen
         JLabel etiquetaImgUsuarios = new JLabel(); //Se crea la etiqueta
